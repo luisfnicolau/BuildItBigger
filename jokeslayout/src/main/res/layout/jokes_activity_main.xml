@@ -28,26 +28,6 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="5"
-            android:padding="16dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="16dp"
-                android:text="Get By Library"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/jokes_direct_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="12sp" />
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -70,15 +50,5 @@
                 android:textSize="12sp" />
         </LinearLayout>
 
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/adView"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:gravity="bottom"
-            ads:adSize="BANNER"
-            ads:adUnitId="@string/banner_ad_unit_id">
-        </com.google.android.gms.ads.AdView>
 
     </LinearLayout>

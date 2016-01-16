@@ -20,10 +20,13 @@ android {
 
     productFlavors {
         free {
-            applicationId "com.example.luis.BuildItBigger.free"
+            applicationId "com.example.luis.builditbigger.free"
+            dependencies {
+                compile 'com.google.android.gms:play-services-ads:8.4.0'
+            }
         }
         paid {
-            applicationId "com.example.luis.BuildItBigger.paid"
+            applicationId "com.example.luis.builditbigger.paid"
         }
     }
 }
@@ -35,4 +38,5 @@ dependencies {
     compile 'com.android.support:design:23.1.1'
     compile project(':jokes')
     compile project(':jokeslayout')
+    compile project(path: ':backend', configuration: 'android-endpoints')
 }
