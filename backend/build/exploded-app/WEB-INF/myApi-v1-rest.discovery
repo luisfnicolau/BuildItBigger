@@ -1,22 +1,22 @@
 {
  "kind": "discovery#restDescription",
- "etag": "\"u_zXkMELIlX4ktyNbM2XKD4vK8E/iw5EA7Iu0ix68FfbS9D0RfqOzJQ\"",
+ "etag": "\"u_zXkMELIlX4ktyNbM2XKD4vK8E/pU9zsO3yHo_QlU43A0FKocmuBMI\"",
  "discoveryVersion": "v1",
  "id": "myApi:v1",
  "name": "myApi",
  "version": "v1",
  "description": "This is an API",
- "ownerDomain": "backend.buildItBigger.Luis.example.com",
- "ownerName": "backend.buildItBigger.Luis.example.com",
+ "ownerDomain": "backend.myapplication.Luis.example.com",
+ "ownerName": "backend.myapplication.Luis.example.com",
  "icons": {
   "x16": "http://www.google.com/images/icons/product/search-16.gif",
   "x32": "http://www.google.com/images/icons/product/search-32.gif"
  },
  "protocol": "rest",
- "baseUrl": "https://myApplicationId.appspot.com/_ah/api/myApi/v1/sayHi/",
- "basePath": "/_ah/api/myApi/v1/sayHi/",
+ "baseUrl": "https://myApplicationId.appspot.com/_ah/api/myApi/v1/",
+ "basePath": "/_ah/api/myApi/v1/",
  "rootUrl": "https://myApplicationId.appspot.com/_ah/api/",
- "servicePath": "myApi/v1/sayHi/",
+ "servicePath": "myApi/v1/",
  "batchPath": "batch",
  "parameters": {
   "alt": {
@@ -81,12 +81,32 @@
      "type": "string"
     }
    }
+  },
+  "MyJokes": {
+   "id": "MyJokes",
+   "type": "object",
+   "properties": {
+    "joke": {
+     "type": "string"
+    }
+   }
   }
  },
  "methods": {
+  "myJoke": {
+   "id": "myApi.myJoke",
+   "path": "myJoke",
+   "httpMethod": "POST",
+   "response": {
+    "$ref": "MyJokes"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
   "sayHi": {
    "id": "myApi.sayHi",
-   "path": "{name}",
+   "path": "sayHi/{name}",
    "httpMethod": "POST",
    "parameters": {
     "name": {

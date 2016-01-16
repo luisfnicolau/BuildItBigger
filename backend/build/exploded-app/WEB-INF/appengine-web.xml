@@ -6,6 +6,5 @@
 
     <system-properties>
         <property name="java.util.logging.config.file" value="WEB-INF/logging.properties"/>
-        <property name="gcm.api.key" value="AIzaSyBe4zS8vb6rS1nayjcSHnPCrR6xyG8r-NA"></property>
     </system-properties>
 </appengine-web-app>

@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         String joke = Jokes.getJoke();
         Intent intent = new Intent(this, JokesMainActivity.class);
         intent.putExtra("JOKE", joke);
+        intent.putExtra("isPaid", getResources().getBoolean(R.bool.isPaid));
         startActivity(intent);
 //        TextView joke = (TextView)findViewById(R.id.joke_text);
 //        joke.setText(Jokes.getJoke());
