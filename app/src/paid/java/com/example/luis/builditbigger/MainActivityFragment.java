@@ -1,34 +1,46 @@
-package com.example.luis.jokeslayout;
+package com.example.luis.builditbigger; /**
+ * Created by Luis on 1/17/2016.
+ */
 
-import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.Jokes;
 import com.example.luis.myapplication.backend.myApi.MyApi;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 
 import java.io.IOException;
 
-
 /**
- * Created by Luis on 1/12/2016.
+ * A placeholder fragment containing a simple view.
  */
-public class JokesMainActivity extends Activity {
+public class MainActivityFragment extends Fragment {
+
+    View rootView;
+
+    public MainActivityFragment() {
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.jokes_activity_main);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
         new EndpointsAsyncTask().execute();
 
-        String joke = getIntent().getStringExtra("JOKE");
-        TextView textJoke = (TextView)findViewById(R.id.jokes_intent_text_view);
-        textJoke.setText(joke);
+        TextView byLibraryTextView = (TextView) rootView.findViewById(R.id.jokes_direct_text_view);
+        byLibraryTextView.setText(Jokes.getJoke());
+
+
+        return rootView;
     }
 
 
@@ -39,7 +51,7 @@ public class JokesMainActivity extends Activity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            spinner = (ProgressBar)findViewById(R.id.progressBar);
+            spinner = (ProgressBar)rootView.findViewById(R.id.progressBar);
             spinner.setVisibility(View.VISIBLE);
         }
 
@@ -63,7 +75,7 @@ public class JokesMainActivity extends Activity {
         @Override
         protected void onPostExecute(String result) {
             spinner.setVisibility(View.GONE);
-            TextView gcmTextView = (TextView)findViewById(R.id.jokes_GCM_text_view);
+            TextView gcmTextView = (TextView)rootView.findViewById(R.id.jokes_GCM_text_view);
             gcmTextView.setText(result);
         }
     }

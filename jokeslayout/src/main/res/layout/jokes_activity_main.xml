@@ -43,6 +43,14 @@
                 android:text="Get By GCM"
                 android:textSize="24sp" />
 
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_centerHorizontal="true" />
+
             <TextView
                 android:id="@+id/jokes_GCM_text_view"
                 android:layout_width="wrap_content"

@@ -2,7 +2,7 @@ apply plugin: 'java'
 apply plugin: 'maven'
 
 
-group = 'com.example.luis.builditbigger.backend'
+group = 'com.example.luis.myapplication.backend'
 archivesBaseName = 'myApi'
 version = 'v1-1.21.0-SNAPSHOT'
 
