@@ -20,7 +20,6 @@ public class GCMRetrieverTest extends AndroidTestCase {
         if(myApiService == null) {  // Only do this once
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(), new AndroidJsonFactory(), null)
                     .setRootUrl("https://cryptic-ground-119019.appspot.com/_ah/api/");
-            // end options for devappserver
 
             myApiService = builder.build();
         }
